@@ -1,0 +1,19 @@
+################################################################################
+
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+
+################################################################################
+
+
+
+/.vs
+
+/output
+
+/config.wyam.packages.xml
+
+/config.wyam.hash
+
+/config.wyam.dll
+
+/tools
