@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 
-        <title>My Blog</title>
+        <title>My Blog - Boring Bit</title>
         <meta name="description" content="Welcome!" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">        
 
@@ -28,9 +28,9 @@
         <meta name="msapplication-tooltip" content="My Blog" />
         <meta name="msapplication-starturl" content="/mysite/" />
 
-        <meta property="og:title" content="My Blog" />
+        <meta property="og:title" content="My Blog - Boring Bit" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://howesonp.github.io/mysite/" />
+        <meta property="og:url" content="https://howesonp.github.io/mysite/cv" />
         <!-- TODO: More social graph meta tags -->
 
         <script src="/mysite/assets/js/jquery.min.js"></script>
@@ -89,11 +89,9 @@
                         <div class="container">
                                 <div class="row">
                                         <div class="col-md-12">
-
-    <div class="site-heading">
-        <h1>Welcome!</h1>
-    </div>
-                                        </div>
+<div class="site-heading">
+    <h1>Boring Bit</h1>
+</div>                                            </div>
                                 </div>
                         </div>
                 </header>
@@ -102,91 +100,72 @@
                 <div class="container">
                         <div class="row">
                                 <div id="content" class="col-md-12">
-                                        
-<div class="row">
-    <div class="col-sm-8 right-border">
-                <div class="post-preview">
-                    <a href="/mysite/posts/2019/03/migrating-to-github-pages">
-                        <h2 class="post-title">Website CI/CD pipeline</h2>
-                    </a>
-                    <p class="post-meta">Posted on Thursday, March 7, 2019</p>
-<p>ABC</p>
-                </div>       
-                    <hr /> 
-                <div class="post-preview">
-                    <a href="/mysite/posts/2019/03/getting-started">
-                        <h2 class="post-title">Wyam website creation</h2>
-                    </a>
-                    <p class="post-meta">Posted on Thursday, March 7, 2019</p>
-<p>This is my first post on my personal site.</p>
-<p>I wanted to create a personal website to start documenting some of things that I mess about on and have interest in. Largely this will be development based I'm guessing but who knows. I went for a static site approach since I have no foreseeable need for dynamic content or proper backend. I'm initally hosting this on Azure Storage which has fairly recently started making this available.</p>
-<p>So to start with I thought I'd create a simple on going 'how to' series on how I'm going about creating my statically hosted website in Azure.</p>
-<p>Being someone with more experience as a back-end developer than front-end I decided to use a static site templating tool. I chose Wyam over some of the more well known ones purely as it looked easy to use and completely extensible, which is even better since it's written in dotnet. The approach Wyam takes is to give some /input files, and pipelines to create an /output directory where all the input files are translated into proper html with 'themes' (which can be customised) are applied. The input files for blog posts etc can be written in markdown then translated. Everything is overrideable and it includes support for using Razor views as well.</p>
-<p>I have been using VSCode for my IDE, which has provided a fantastic experience with the ever growing list of handy extensions. ... to do provide a list..</p>
-<h2 id="prerequisites">Prerequisites</h2>
-<ol>
-<li>dotnet core and cli tools installed.</li>
-<li>vscode installed</li>
-</ol>
-<h3 id="steps-to-install-wyam">Steps to install Wyam</h3>
+                                        <h1 id="pat-howeson">Pat Howeson</h1>
+<h2 id="alt-text"><img src="./assets/images/me-small.jpg" class="img-fluid" alt="alt text" title="Pat Howeson" /></h2>
+<h4 id="cloud-software-engineer">Cloud Software Engineer</h4>
+<h4 id="email-phoweson.co.uk">Email: p&#64;howeson.co.uk</h4>
+<p><a href="https://www.linkedin.com/in/pat-howeson-ba0ab182/">LinkedIn</a>
+<a href="https://github.com/howesonp">GitHub</a></p>
+<hr />
+<h2 id="profile">Profile</h2>
+<p>Passionate Software Craftsmen with more than ten years’ experience in a commercial Asset Management environment. Strong development skills utilising Technical Agile methodologies working in cross functional teams, with both on premise and Cloud experience. With lead developer and ScrumMaster experience, I am an avid learner who enjoys and advocates the collaborative nature of software development. I am looking to both broaden my skillset and help spread what I have learnt whilst building amazing products in a new and exciting company.</p>
+<hr />
+<h2 id="key-skills">Key Skills</h2>
 <ul>
-<li>Start a terminal session in VsCode (assuming you have dotnet core cli installed)
-<code>dotnet tool install -g Wyam.Tool</code></li>
+<li>Full Stack Software Development</li>
+<li>Cloud Development</li>
+<li>Solid/Clean code</li>
+<li>Agile/XP methodologies</li>
+<li>DevOps</li>
+<li>BDD/DDD/TDD approaches</li>
+<li>Automated Testing</li>
 </ul>
-<h3 id="steps-to-create-the-hello-world-vanilla-blog-site">Steps to create the 'hello world' vanilla blog site</h3>
-<p><code>wyam new --recipe Blog</code></p>
-<p>This will create the new site with the blog recipe, then you can edit the input files as required before building the blog with a certain theme:</p>
-<p><code>wyam --recipe Blog --theme CleanBlog</code></p>
-<p>That's it. Done. You should have a nice output folder with translated files</p>
-<p>Any pipeline customizations can be done in the 'config.wyam' folder... I'll add examples as I need to start using them.</p>
-<h2 id="azure-static-website">Azure Static Website</h2>
-<p>Initially I am hosting this on Azure Storage using Static Website, however I'm already tempted by the ease of using GitHub Pages, so this may well change. Setting up Azure Storage was however pretty straight forward and the extension 'Azure Account' and 'Azure Storage' made deploying the site straightfoward.</p>
-                </div>       
-                    <hr /> 
-                <div class="post-preview">
-                    <a href="/mysite/posts/2016/01/first-post">
-                        <h2 class="post-title">First Post</h2>
-                    </a>
-                    <p class="post-meta">Posted on Friday, January 1, 2016</p>
-<p>This is my first post!</p>
-                </div>       
-        <ul class="pager">
-            <li class="previous">                
-            </li>
-            <li class="next">
-            </li>
-        </ul>
-    </div>
-    <div class="col-sm-4 sidebar">
-        <hr class="visible-xs-block" />
-
-            <h5>Tags</h5>
-            <div>
-                    <a role="button" href="/mysite/tags/Introduction" class="btn btn-default btn-sm"> Introduction (2)</a>
-                    <a role="button" href="/mysite/tags/Wyam" class="btn btn-default btn-sm"> Wyam (1)</a>
-                    <a role="button" href="/mysite/tags/AppVeyor" class="btn btn-default btn-sm"> AppVeyor (1)</a>
-                    <a role="button" href="/mysite/tags/GitHub-Pages" class="btn btn-default btn-sm"> GitHub Pages (1)</a>
-                    <a role="button" href="/mysite/tags/VSCode" class="btn btn-default btn-sm"> VSCode (1)</a>
-            </div>
-            <ul class="pager">
-                <li class="next">
-                    <a href="/mysite/tags">View All Tags &rarr;</a>
-                </li>
-            </ul>
-
-            <hr />
-            <h5>Older Posts</h5>
-            <ul class="list-unstyled">
-            </ul>
-                <ul class="pager">
-                    <li class="next">
-                        <a href="/mysite/posts">Archive &rarr;</a>
-                    </li>
-                </ul>
-
-        
-    </div> 
-</div>
+<h2 id="technology-summary">Technology Summary</h2>
+<ul>
+<li>Azure</li>
+<li>.NET &amp; .NET CORE</li>
+<li>C#</li>
+<li>Apigee</li>
+<li>Relational and NoSql Databases</li>
+<li>PowerShell</li>
+<li>JavaScript, CSS3, HTML5, Angular4</li>
+</ul>
+<h2 id="supporting-software">Supporting Software</h2>
+<ul>
+<li>Source Control (Git, Bitbucket, Azure repos)</li>
+<li>Collaboration tools (Confluence, JIRA, Slack, Teams)</li>
+<li>CI/CD - Jenkins &amp; Azure DevOps</li>
+</ul>
+<hr />
+<h2 id="employment-history">Employment History</h2>
+<h4 id="present-mg-asset-management">2007 		    -&gt; Present		- M&amp;G Asset Management</h4>
+<ul>
+<li>June 2007   	-&gt; August 2010 		- UAT Consultant, Configuration Manager</li>
+<li>August 2010  	-&gt; January 2017		- Developer/Analyst</li>
+<li>January 2017	-&gt; June 2018		- Technical Lead</li>
+<li>June 2018     -&gt; Present          - Cloud Engineer</li>
+</ul>
+<h2 id="role">Role</h2>
+<p>Design, build, test, document and deploy bespoke, robust and scalable applications using agile/scrum methodologies. Interface with users and stakeholders in an iterative manner to ensure business requirements are understood and priority business value is delivered.</p>
+<h2 id="key-projects">Key projects</h2>
+<h3 id="asset-back-security-automation">Asset Back Security automation</h3>
+<p>Cloud based solution, utlising Table Storage, Logic Apps, Service Bus, Azure Functions over Apigee Proxies.</p>
+<h3 id="funds-under-management">Funds Under Management</h3>
+<p>Angular 4 front-end, with supporting RESTful Web API and SQL Server backend architecture.  Acted as both lead developer and ScrumMaster.</p>
+<h3 id="solvency-ii-validation">Solvency II – Validation</h3>
+<p>ASP.NET MVC 5 Web Application, with RESTful Web API's and SqlServer.</p>
+<h3 id="book-management">Book Management</h3>
+<p>WinForms application built using DevExpress controls and a SQL Server back-end database, using SqlDependency for real time updates.</p>
+<hr />
+<h2 id="professional-qualifications">Professional Qualifications</h2>
+<p><strong>IAQ</strong> 				    -  Investment Administration Qualification</p>
+<p><strong>ISEB</strong> 					-  Information Systems Examination board - Foundation</p>
+<p><strong>ITIL</strong> 					-  Information Technology Infrastructure Libraries – Foundation</p>
+<h2 id="education">Education</h2>
+<p><strong>University</strong>			        -  Bournemouth University - (2003-2006)</p>
+<p><strong>Course name</strong> 				-  Applied Psychology and Computing</p>
+<p><strong>Sample modules</strong>	            -  Computer Visualization, Human Computer Interaction, Software         Development (VB), Systems psychology and design.</p>
+<p><strong>Final grade</strong>				    -  2:1</p>
 
                                 </div>
                         </div>

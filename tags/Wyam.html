@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 
-        <title>My Blog</title>
+        <title>My Blog - Wyam</title>
         <meta name="description" content="Welcome!" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">        
 
@@ -28,9 +28,9 @@
         <meta name="msapplication-tooltip" content="My Blog" />
         <meta name="msapplication-starturl" content="/mysite/" />
 
-        <meta property="og:title" content="My Blog" />
+        <meta property="og:title" content="My Blog - Wyam" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://howesonp.github.io/mysite/" />
+        <meta property="og:url" content="https://howesonp.github.io/mysite/tags/Wyam" />
         <!-- TODO: More social graph meta tags -->
 
         <script src="/mysite/assets/js/jquery.min.js"></script>
@@ -89,11 +89,9 @@
                         <div class="container">
                                 <div class="row">
                                         <div class="col-md-12">
-
-    <div class="site-heading">
-        <h1>Welcome!</h1>
-    </div>
-                                        </div>
+<div class="site-heading">
+    <h1>Wyam</h1>
+</div>                                            </div>
                                 </div>
                         </div>
                 </header>
@@ -102,92 +100,38 @@
                 <div class="container">
                         <div class="row">
                                 <div id="content" class="col-md-12">
-                                        
-<div class="row">
-    <div class="col-sm-8 right-border">
-                <div class="post-preview">
-                    <a href="/mysite/posts/2019/03/migrating-to-github-pages">
-                        <h2 class="post-title">Website CI/CD pipeline</h2>
-                    </a>
-                    <p class="post-meta">Posted on Thursday, March 7, 2019</p>
-<p>ABC</p>
-                </div>       
-                    <hr /> 
-                <div class="post-preview">
-                    <a href="/mysite/posts/2019/03/getting-started">
-                        <h2 class="post-title">Wyam website creation</h2>
-                    </a>
-                    <p class="post-meta">Posted on Thursday, March 7, 2019</p>
-<p>This is my first post on my personal site.</p>
-<p>I wanted to create a personal website to start documenting some of things that I mess about on and have interest in. Largely this will be development based I'm guessing but who knows. I went for a static site approach since I have no foreseeable need for dynamic content or proper backend. I'm initally hosting this on Azure Storage which has fairly recently started making this available.</p>
-<p>So to start with I thought I'd create a simple on going 'how to' series on how I'm going about creating my statically hosted website in Azure.</p>
-<p>Being someone with more experience as a back-end developer than front-end I decided to use a static site templating tool. I chose Wyam over some of the more well known ones purely as it looked easy to use and completely extensible, which is even better since it's written in dotnet. The approach Wyam takes is to give some /input files, and pipelines to create an /output directory where all the input files are translated into proper html with 'themes' (which can be customised) are applied. The input files for blog posts etc can be written in markdown then translated. Everything is overrideable and it includes support for using Razor views as well.</p>
-<p>I have been using VSCode for my IDE, which has provided a fantastic experience with the ever growing list of handy extensions. ... to do provide a list..</p>
-<h2 id="prerequisites">Prerequisites</h2>
-<ol>
-<li>dotnet core and cli tools installed.</li>
-<li>vscode installed</li>
-</ol>
-<h3 id="steps-to-install-wyam">Steps to install Wyam</h3>
-<ul>
-<li>Start a terminal session in VsCode (assuming you have dotnet core cli installed)
-<code>dotnet tool install -g Wyam.Tool</code></li>
-</ul>
-<h3 id="steps-to-create-the-hello-world-vanilla-blog-site">Steps to create the 'hello world' vanilla blog site</h3>
-<p><code>wyam new --recipe Blog</code></p>
-<p>This will create the new site with the blog recipe, then you can edit the input files as required before building the blog with a certain theme:</p>
-<p><code>wyam --recipe Blog --theme CleanBlog</code></p>
-<p>That's it. Done. You should have a nice output folder with translated files</p>
-<p>Any pipeline customizations can be done in the 'config.wyam' folder... I'll add examples as I need to start using them.</p>
-<h2 id="azure-static-website">Azure Static Website</h2>
-<p>Initially I am hosting this on Azure Storage using Static Website, however I'm already tempted by the ease of using GitHub Pages, so this may well change. Setting up Azure Storage was however pretty straight forward and the extension 'Azure Account' and 'Azure Storage' made deploying the site straightfoward.</p>
-                </div>       
-                    <hr /> 
-                <div class="post-preview">
-                    <a href="/mysite/posts/2016/01/first-post">
-                        <h2 class="post-title">First Post</h2>
-                    </a>
-                    <p class="post-meta">Posted on Friday, January 1, 2016</p>
-<p>This is my first post!</p>
-                </div>       
-        <ul class="pager">
-            <li class="previous">                
-            </li>
-            <li class="next">
-            </li>
-        </ul>
-    </div>
-    <div class="col-sm-4 sidebar">
-        <hr class="visible-xs-block" />
+                                        <div class="container-sm-height">
+    <div class="row row-sm-height">
+        <div class="col-sm-8 right-border col-sm-height">
+            
+        <div class="post-list">
+            <a href="/mysite/posts/2019/03/getting-started">
+                <h3 class="post-title">Wyam website creation</h3>
+            </a>
+            <p class="post-meta">Posted on Thursday, March 7, 2019</p>      
+        </div>   
 
-            <h5>Tags</h5>
-            <div>
-                    <a role="button" href="/mysite/tags/Introduction" class="btn btn-default btn-sm"> Introduction (2)</a>
-                    <a role="button" href="/mysite/tags/Wyam" class="btn btn-default btn-sm"> Wyam (1)</a>
-                    <a role="button" href="/mysite/tags/AppVeyor" class="btn btn-default btn-sm"> AppVeyor (1)</a>
-                    <a role="button" href="/mysite/tags/GitHub-Pages" class="btn btn-default btn-sm"> GitHub Pages (1)</a>
-                    <a role="button" href="/mysite/tags/VSCode" class="btn btn-default btn-sm"> VSCode (1)</a>
-            </div>
-            <ul class="pager">
-                <li class="next">
-                    <a href="/mysite/tags">View All Tags &rarr;</a>
-                </li>
-            </ul>
 
-            <hr />
-            <h5>Older Posts</h5>
-            <ul class="list-unstyled">
-            </ul>
+            <nav>
                 <ul class="pager">
+                    <li class="previous">                
+                    </li>
                     <li class="next">
-                        <a href="/mysite/posts">Archive &rarr;</a>
                     </li>
                 </ul>
-
-        
-    </div> 
+            </nav>
+            <hr class="visible-xs-block" />
+        </div>
+		
+        <div class="col-sm-4 col-sm-height">
+                <a role="button" href="/mysite/tags/Introduction" class="btn btn-default btn-xs">Introduction (2)</a>
+                <a role="button" href="/mysite/tags/Wyam" class="btn btn-primary btn-xs">Wyam (1)</a>
+                <a role="button" href="/mysite/tags/VSCode" class="btn btn-default btn-xs">VSCode (1)</a>
+                <a role="button" href="/mysite/tags/GitHub-Pages" class="btn btn-default btn-xs">GitHub Pages (1)</a>
+                <a role="button" href="/mysite/tags/AppVeyor" class="btn btn-default btn-xs">AppVeyor (1)</a>
+        </div>
+    </div>
 </div>
-
                                 </div>
                         </div>
                 </div>
