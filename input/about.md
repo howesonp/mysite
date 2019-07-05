@@ -3,16 +3,15 @@ Title: About Me
 
 # Pat Howeson
 
+## Cloud Software Engineer
 
-## ![alt text](./assets/images/me-small.jpg "Pat Howeson")
+## ![alt text](./assets/images/me-medium.jpg "Pat Howeson")
 
-
-#### Cloud Software Engineer
-#### Email: p@howeson.co.uk
-[LinkedIn](https://www.linkedin.com/in/pat-howeson-ba0ab182/)
-
-
-[GitHub](https://github.com/howesonp)
+<div>
+    <a href="mailto:p@howeson.co.uk"> <i class="fa fa-envelope-o fa-4x"></i></a>
+    <a href="https://github.com/howesonp"> <i class="fa fa-github fa-4x"></i></a>
+    <a href="https://www.linkedin.com/in/pat-howeson-ba0ab182/"> <i class="fa fa-linkedin-square fa-4x"></i></a>
+</div>
 
 ---
 
@@ -20,9 +19,9 @@ Title: About Me
 
 Over the years I've worked across the Microsoft stack, on both back and front end solutions, starting with VBA and quickly moving on to the .NET family.
 
-Stumbling upon the Software Craftsmenship and XP movements really changed the way I thought about coding as a profession. In recent years I've been focussed on Cloud Solutions, and have enjoyed the new challenges that come with the shift in role from a Dev who thought about logic to code, to a Dev who things about config as code, infrastructure as code etc. I also enjoy automation/devops.
+Stumbling upon the Software Craftsmenship and XP movements really changed the way I thought about coding as a profession. In recent years I've been focussed on Cloud Solutions, and have enjoyed really enjoyed the new challenges and control that comes with the shift in role. Where before I simply thought about the logic to code on the  inhouse infrastructure managed by other teams, now we also have to think about the infrastructure, the deployment, the costs more and more.
 
-[CV](./cv)
+[FullResume](../cv/cv)
 
 ## Rest
 

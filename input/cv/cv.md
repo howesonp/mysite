@@ -4,13 +4,12 @@ Title: Boring Bit
 # Pat Howeson
 
 
-## ![alt text](./assets/images/me-small.jpg  "Pat Howeson")
+## ![alt text](./assets/images/me-medium.jpg  "Pat Howeson")
 
 
 #### Cloud Software Engineer
 #### Email: p@howeson.co.uk
-[LinkedIn](https://www.linkedin.com/in/pat-howeson-ba0ab182/)
-[GitHub](https://github.com/howesonp)
+#### GitHub: https://github.com/howesonp
 
 ---
 

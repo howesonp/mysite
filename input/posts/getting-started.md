@@ -10,7 +10,7 @@ This is my first post on my personal site.
 
 I wanted to create a personal website to start documenting some of things that I mess about on and have interest in. Largely this will be development based I'm guessing but who knows. I went for a static site approach since I have no foreseeable need for dynamic content or proper backend. I'm initally hosting this on Azure Storage which has fairly recently started making this available.
 
-So to start with I thought I'd create a simple on going 'how to' series on how I'm going about creating my statically hosted website in Azure.
+So to start with I thought I'd create a simple post on how I'm going about creating my statically hosted website in Azure.
 
 Being someone with more experience as a back-end developer than front-end I decided to use a static site templating tool. I chose Wyam over some of the more well known ones purely as it looked easy to use and completely extensible, which is even better since it's written in dotnet. The approach Wyam takes is to give some /input files, and pipelines to create an /output directory where all the input files are translated into proper html with 'themes' (which can be customised) are applied. The input files for blog posts etc can be written in markdown then translated. Everything is overrideable and it includes support for using Razor views as well.
 
@@ -35,7 +35,7 @@ This will create the new site with the blog recipe, then you can edit the input 
 
 `wyam --recipe Blog --theme CleanBlog`
 
-That's it. Done. You should have a nice output folder with translated files
+That's it. Done. You should have a nice output folder with translated files. I chose to copy the theme files and Razor views from the wyam github repo so I could easily override behaviour and styles as required, and also because I find it easier to understand if I can quickly check the logic.
 
 Any pipeline customizations can be done in the 'config.wyam' folder... I'll add examples as I need to start using them.
 
