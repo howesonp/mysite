@@ -5,15 +5,16 @@
 		<link>https://howesonp.github.io/mysite</link>
 		<description>Welcome!</description>
 		<copyright>2019</copyright>
-		<pubDate>Fri, 05 Jul 2019 05:50:56 GMT</pubDate>
-		<lastBuildDate>Fri, 05 Jul 2019 05:50:56 GMT</lastBuildDate>
+		<pubDate>Fri, 05 Jul 2019 14:06:57 GMT</pubDate>
+		<lastBuildDate>Fri, 05 Jul 2019 14:06:57 GMT</lastBuildDate>
 		<item>
 			<title>Website CI/CD pipeline</title>
-			<link>https://howesonp.github.io/mysite/posts/2019/03/migrating-to-github-pages</link>
-			<description>&lt;p&gt;ABC&lt;/p&gt;</description>
-			<guid>https://howesonp.github.io/mysite/posts/2019/03/migrating-to-github-pages</guid>
-			<pubDate>Thu, 07 Mar 2019 00:00:00 GMT</pubDate>
-			<content:encoded>&lt;p&gt;ABC&lt;/p&gt;
+			<link>https://howesonp.github.io/mysite/posts/2019/05/migrating-to-github-pages</link>
+			<description>&lt;p&gt;I decided against an Azure static site with a Azure devops pipeline, and settled on Github pages and AppVeyor, largely because I'd not done anything with GitHub Pages or AppVeyor before. I also sensed that setting up the custom domain was going to be much more straightfoward, Azure expects to use a CDN for the custom domain, and whilst very do-able was not as straightforward&lt;/p&gt;</description>
+			<guid>https://howesonp.github.io/mysite/posts/2019/05/migrating-to-github-pages</guid>
+			<pubDate>Tue, 07 May 2019 00:00:00 GMT</pubDate>
+			<content:encoded>&lt;h2 id="appveyor-and-github-pages"&gt;AppVeyor and GitHub Pages&lt;/h2&gt;
+&lt;p&gt;I decided against an Azure static site with a Azure devops pipeline, and settled on Github pages and AppVeyor, largely because I'd not done anything with GitHub Pages or AppVeyor before. I also sensed that setting up the custom domain was going to be much more straightfoward, Azure expects to use a CDN for the custom domain, and whilst very do-able was not as straightforward&lt;/p&gt;
 </content:encoded>
 		</item>
 		<item>
@@ -24,7 +25,7 @@
 			<pubDate>Thu, 07 Mar 2019 00:00:00 GMT</pubDate>
 			<content:encoded>&lt;p&gt;This is my first post on my personal site.&lt;/p&gt;
 &lt;p&gt;I wanted to create a personal website to start documenting some of things that I mess about on and have interest in. Largely this will be development based I'm guessing but who knows. I went for a static site approach since I have no foreseeable need for dynamic content or proper backend. I'm initally hosting this on Azure Storage which has fairly recently started making this available.&lt;/p&gt;
-&lt;p&gt;So to start with I thought I'd create a simple on going 'how to' series on how I'm going about creating my statically hosted website in Azure.&lt;/p&gt;
+&lt;p&gt;So to start with I thought I'd create a simple post on how I'm going about creating my statically hosted website in Azure.&lt;/p&gt;
 &lt;p&gt;Being someone with more experience as a back-end developer than front-end I decided to use a static site templating tool. I chose Wyam over some of the more well known ones purely as it looked easy to use and completely extensible, which is even better since it's written in dotnet. The approach Wyam takes is to give some /input files, and pipelines to create an /output directory where all the input files are translated into proper html with 'themes' (which can be customised) are applied. The input files for blog posts etc can be written in markdown then translated. Everything is overrideable and it includes support for using Razor views as well.&lt;/p&gt;
 &lt;p&gt;I have been using VSCode for my IDE, which has provided a fantastic experience with the ever growing list of handy extensions. ... to do provide a list..&lt;/p&gt;
 &lt;h2 id="prerequisites"&gt;Prerequisites&lt;/h2&gt;
@@ -41,7 +42,7 @@
 &lt;p&gt;&lt;code&gt;wyam new --recipe Blog&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;This will create the new site with the blog recipe, then you can edit the input files as required before building the blog with a certain theme:&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;wyam --recipe Blog --theme CleanBlog&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;That's it. Done. You should have a nice output folder with translated files&lt;/p&gt;
+&lt;p&gt;That's it. Done. You should have a nice output folder with translated files. I chose to copy the theme files and Razor views from the wyam github repo so I could easily override behaviour and styles as required, and also because I find it easier to understand if I can quickly check the logic.&lt;/p&gt;
 &lt;p&gt;Any pipeline customizations can be done in the 'config.wyam' folder... I'll add examples as I need to start using them.&lt;/p&gt;
 &lt;h2 id="azure-static-website"&gt;Azure Static Website&lt;/h2&gt;
 &lt;p&gt;Initially I am hosting this on Azure Storage using Static Website, however I'm already tempted by the ease of using GitHub Pages, so this may well change. Setting up Azure Storage was however pretty straight forward and the extension 'Azure Account' and 'Azure Storage' made deploying the site straightfoward.&lt;/p&gt;
