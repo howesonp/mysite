@@ -4,16 +4,9 @@
 
 ################################################################################
 
-
-
 /.vs
-
 /output
-
 /config.wyam.packages.xml
-
 /config.wyam.hash
-
 /config.wyam.dll
-
 /tools
