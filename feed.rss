@@ -2,16 +2,16 @@
 <rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
 	<channel>
 		<title>My Blog</title>
-		<link>https://howesonp.github.io/mysite</link>
+		<link>https://howesonp.github.io/</link>
 		<description>Welcome!</description>
 		<copyright>2019</copyright>
-		<pubDate>Sat, 06 Jul 2019 05:37:58 GMT</pubDate>
-		<lastBuildDate>Sat, 06 Jul 2019 05:37:58 GMT</lastBuildDate>
+		<pubDate>Sat, 06 Jul 2019 12:03:27 GMT</pubDate>
+		<lastBuildDate>Sat, 06 Jul 2019 12:03:27 GMT</lastBuildDate>
 		<item>
 			<title>Website CI/CD pipeline</title>
-			<link>https://howesonp.github.io/mysite/posts/2019/05/migrating-to-github-pages</link>
+			<link>https://howesonp.github.io/posts/2019/05/migrating-to-github-pages</link>
 			<description>&lt;p&gt;I decided against an Azure static site with a Azure devops pipeline, and settled on Github pages and AppVeyor, largely because I'd not done anything with GitHub Pages or AppVeyor before. I also sensed that setting up the custom domain was going to be much more straightfoward, Azure expects to use a CDN for the custom domain, and whilst very do-able was not as straightforward&lt;/p&gt;</description>
-			<guid>https://howesonp.github.io/mysite/posts/2019/05/migrating-to-github-pages</guid>
+			<guid>https://howesonp.github.io/posts/2019/05/migrating-to-github-pages</guid>
 			<pubDate>Tue, 07 May 2019 00:00:00 GMT</pubDate>
 			<content:encoded>&lt;h2 id="appveyor-and-github-pages"&gt;AppVeyor and GitHub Pages&lt;/h2&gt;
 &lt;p&gt;I decided against an Azure static site with a Azure devops pipeline, and settled on Github pages and AppVeyor, largely because I'd not done anything with GitHub Pages or AppVeyor before. I also sensed that setting up the custom domain was going to be much more straightfoward, Azure expects to use a CDN for the custom domain, and whilst very do-able was not as straightforward&lt;/p&gt;
@@ -19,9 +19,9 @@
 		</item>
 		<item>
 			<title>Wyam website creation</title>
-			<link>https://howesonp.github.io/mysite/posts/2019/03/getting-started</link>
+			<link>https://howesonp.github.io/posts/2019/03/getting-started</link>
 			<description>&lt;p&gt;This is my first post on my personal site.&lt;/p&gt;</description>
-			<guid>https://howesonp.github.io/mysite/posts/2019/03/getting-started</guid>
+			<guid>https://howesonp.github.io/posts/2019/03/getting-started</guid>
 			<pubDate>Thu, 07 Mar 2019 00:00:00 GMT</pubDate>
 			<content:encoded>&lt;p&gt;This is my first post on my personal site.&lt;/p&gt;
 &lt;p&gt;I wanted to create a personal website to start documenting some of things that I mess about on and have interest in. Largely this will be development based I'm guessing but who knows. I went for a static site approach since I have no foreseeable need for dynamic content or proper backend. I'm initally hosting this on Azure Storage which has fairly recently started making this available.&lt;/p&gt;
@@ -50,9 +50,9 @@
 		</item>
 		<item>
 			<title>First Post</title>
-			<link>https://howesonp.github.io/mysite/posts/2016/01/first-post</link>
+			<link>https://howesonp.github.io/posts/2016/01/first-post</link>
 			<description>&lt;p&gt;This is my first post!&lt;/p&gt;</description>
-			<guid>https://howesonp.github.io/mysite/posts/2016/01/first-post</guid>
+			<guid>https://howesonp.github.io/posts/2016/01/first-post</guid>
 			<pubDate>Fri, 01 Jan 2016 00:00:00 GMT</pubDate>
 			<content:encoded>&lt;p&gt;This is my first post!&lt;/p&gt;
 </content:encoded>
