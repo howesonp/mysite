@@ -5,7 +5,7 @@
 // Customize your settings and add new ones here
 Settings[Keys.Host] = "howesonp.github.io";
 Settings[Keys.LinksUseHttps] = true;
-Settings[Keys.LinkRoot] = "mysite";
+//Settings[Keys.LinkRoot] = "mysite";
 Settings[Keys.LinkHideExtensions] = true;
 Settings[BlogKeys.CaseInsensitiveTags] = true;
 Settings[BlogKeys.IncludeDateInPostPath] = true;
