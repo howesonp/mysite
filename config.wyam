@@ -5,12 +5,11 @@
 // Customize your settings and add new ones here
 Settings[Keys.Host] = "howesonp.github.io";
 Settings[Keys.LinksUseHttps] = true;
-//Settings[Keys.LinkRoot] = "mysite";
 Settings[Keys.LinkHideExtensions] = true;
 Settings[BlogKeys.Title] = "Pat Howeson";
 Settings[BlogKeys.CaseInsensitiveTags] = true;
 Settings[BlogKeys.IncludeDateInPostPath] = true;
-Settings[BlogKeys.IndexFullPosts] = true;
-
-
+Settings[BlogKeys.IndexFullPosts] = false;
+Settings[BlogKeys.IncludeDateInPostPath] = true;
+Settings[BlogKeys.Intro] = "General ramblings, trying to make sense"
 // Add any pipeline customizations here
