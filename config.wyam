@@ -11,5 +11,5 @@ Settings[BlogKeys.CaseInsensitiveTags] = true;
 Settings[BlogKeys.IncludeDateInPostPath] = true;
 Settings[BlogKeys.IndexFullPosts] = false;
 Settings[BlogKeys.IncludeDateInPostPath] = true;
-Settings[BlogKeys.Intro] = "General ramblings, trying to make sense"
+Settings[BlogKeys.Intro] = "General ramblings, trying to make sense";
 // Add any pipeline customizations here
