@@ -19,9 +19,7 @@ Title: About Me
 
 Over the years I've worked across the Microsoft stack, on both back and front end solutions, starting with VBA and quickly moving on to the .NET family.
 
-Stumbling upon the Software Craftsmenship and XP movements really changed the way I thought about coding as a profession. In recent years I've been focussed on Cloud Solutions, and have enjoyed really enjoyed the new challenges and control that comes with the shift in role. Where before I simply thought about the logic to code on the  inhouse infrastructure managed by other teams, now we also have to think about the infrastructure, the deployment, the costs more and more.
-
-[FullResume](../cv/cv)
+Stumbling upon the Software Craftsmenship and XP movements really changed the way I thought about coding as a profession. In recent years I've been focussed on Cloud Solutions, and have enjoyed really enjoyed the new challenges that comes with the shift in role.
 
 ## Rest
 

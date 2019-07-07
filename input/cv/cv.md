@@ -1,6 +1,6 @@
 Title: Boring Bit
 ---
-
+s
 # Pat Howeson
 
 
@@ -15,7 +15,7 @@ Title: Boring Bit
 
 ## Profile
 
-Passionate Software Craftsmen with more than ten years’ experience in a commercial Asset Management environment. Strong development skills utilising Technical Agile methodologies working in cross functional teams, with both on premise and Cloud experience. With lead developer and ScrumMaster experience, I am an avid learner who enjoys and advocates the collaborative nature of software development. I am looking to both broaden my skillset and help spread what I have learnt whilst building amazing products in a new and exciting company.
+Passionate Software Engineer with more than ten years’ experience in a commercial Asset Management environment. Strong development skills utilising Technical Agile practices working in cross functional teams, with both on premise and Cloud experience. I am an avid learner who enjoys and advocates the collaborative nature of software development. I am looking to both broaden my skillset and help spread what I have learnt whilst building amazing products in a new and exciting company.
 
 ---
 
