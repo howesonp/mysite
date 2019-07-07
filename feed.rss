@@ -1,19 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
 	<channel>
-		<title>My Blog</title>
+		<title>Pat Howeson</title>
 		<link>https://howesonp.github.io/</link>
 		<description>Welcome!</description>
 		<copyright>2019</copyright>
-		<pubDate>Sun, 07 Jul 2019 08:37:33 GMT</pubDate>
-		<lastBuildDate>Sun, 07 Jul 2019 08:37:33 GMT</lastBuildDate>
+		<pubDate>Sun, 07 Jul 2019 08:46:44 GMT</pubDate>
+		<lastBuildDate>Sun, 07 Jul 2019 08:46:44 GMT</lastBuildDate>
 		<item>
 			<title>Website CD pipeline</title>
 			<link>https://howesonp.github.io/posts/2019/05/github-pages-with-appveyor</link>
 			<description>&lt;p&gt;With my blog site created and viewable using the preview, next up was where to host it. Having created a GitHub repo for the project I decided to use GitHub Pages as the host primarily as it's free.&lt;/p&gt;</description>
 			<guid>https://howesonp.github.io/posts/2019/05/github-pages-with-appveyor</guid>
 			<pubDate>Tue, 07 May 2019 00:00:00 GMT</pubDate>
-			<content:encoded>&lt;h2 id="appveyor-and-github-pages"&gt;AppVeyor and GitHub Pages&lt;/h2&gt;
+			<content:encoded>&lt;h4 id="appveyor-and-github-pages"&gt;AppVeyor and GitHub Pages&lt;/h4&gt;
 &lt;p&gt;With my blog site created and viewable using the preview, next up was where to host it. Having created a GitHub repo for the project I decided to use GitHub Pages as the host primarily as it's free.&lt;/p&gt;
 &lt;p&gt;In order for me to make use of the site I really needed the process for adding content as pain free as possible so I set up a CD pipeline using AppVeyor.&lt;/p&gt;
 &lt;p&gt;There were a few things to set up first. The appveyor build task will use your input files in master and then output your site pages to another branch in your repo which will then be hosted. I created an orpaned branch for this on my main repo:&lt;/p&gt;

@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 	<id>https://howesonp.github.io/</id>
-	<title>My Blog</title>
+	<title>Pat Howeson</title>
 	<link rel="self" href="https://howesonp.github.io/" />
 	<rights>2019</rights>
-	<updated>2019-07-07T08:37:33Z</updated>
+	<updated>2019-07-07T08:46:44Z</updated>
 	<subtitle>Welcome!</subtitle>
 	<entry>
 		<id>https://howesonp.github.io/posts/2019/05/github-pages-with-appveyor</id>
 		<title>Website CD pipeline</title>
 		<link href="https://howesonp.github.io/posts/2019/05/github-pages-with-appveyor" />
 		<updated>2019-05-07T00:00:00Z</updated>
-		<content>&lt;h2 id="appveyor-and-github-pages"&gt;AppVeyor and GitHub Pages&lt;/h2&gt;
+		<content>&lt;h4 id="appveyor-and-github-pages"&gt;AppVeyor and GitHub Pages&lt;/h4&gt;
 &lt;p&gt;With my blog site created and viewable using the preview, next up was where to host it. Having created a GitHub repo for the project I decided to use GitHub Pages as the host primarily as it's free.&lt;/p&gt;
 &lt;p&gt;In order for me to make use of the site I really needed the process for adding content as pain free as possible so I set up a CD pipeline using AppVeyor.&lt;/p&gt;
 &lt;p&gt;There were a few things to set up first. The appveyor build task will use your input files in master and then output your site pages to another branch in your repo which will then be hosted. I created an orpaned branch for this on my main repo:&lt;/p&gt;
