@@ -6,7 +6,7 @@ Tags:
 
 ---
 
-## AppVeyor and GitHub Pages
+#### AppVeyor and GitHub Pages
 
 With my blog site created and viewable using the preview, next up was where to host it. Having created a GitHub repo for the project I decided to use GitHub Pages as the host primarily as it's free.
 

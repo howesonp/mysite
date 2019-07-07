@@ -7,6 +7,7 @@ Settings[Keys.Host] = "howesonp.github.io";
 Settings[Keys.LinksUseHttps] = true;
 //Settings[Keys.LinkRoot] = "mysite";
 Settings[Keys.LinkHideExtensions] = true;
+Settings[BlogKeys.Title] = "Pat Howeson"
 Settings[BlogKeys.CaseInsensitiveTags] = true;
 Settings[BlogKeys.IncludeDateInPostPath] = true;
 Settings[BlogKeys.IndexFullPosts] = true;
