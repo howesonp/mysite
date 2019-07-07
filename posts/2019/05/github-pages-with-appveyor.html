@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 
-        <title>My Blog - Wyam website creation</title>
+        <title>My Blog - Website CD pipeline</title>
         <meta name="description" content="Welcome!" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">        
 
@@ -28,9 +28,9 @@
         <meta name="msapplication-tooltip" content="My Blog" />
         <meta name="msapplication-starturl" content="/" />
 
-        <meta property="og:title" content="My Blog - Wyam website creation" />
+        <meta property="og:title" content="My Blog - Website CD pipeline" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://howesonp.github.io/posts/2019/03/getting-started" />
+        <meta property="og:url" content="https://howesonp.github.io/posts/2019/05/github-pages-with-appveyor" />
         <!-- TODO: More social graph meta tags -->
 
         <script src="/assets/js/jquery.min.js"></script>
@@ -91,13 +91,12 @@
 
     
 <div class="post-heading">
-    <h1>Wyam website creation</h1>
+    <h1>Website CD pipeline</h1>
     <div class="meta">        
-Published on Thursday, March 7, 2019<br>    </div>
+Published on Tuesday, May 7, 2019<br>    </div>
         <div class="tags">
-                    <a role="button" href="/tags/Introduction" class="btn btn-default btn-xs">Introduction</a>
-                    <a role="button" href="/tags/VSCode" class="btn btn-default btn-xs">VSCode</a>
-                    <a role="button" href="/tags/Wyam" class="btn btn-default btn-xs">Wyam</a>
+                    <a role="button" href="/tags/AppVeyor" class="btn btn-default btn-xs">AppVeyor</a>
+                    <a role="button" href="/tags/GitHub-Pages" class="btn btn-default btn-xs">GitHub Pages</a>
         </div>     
 </div>
                                         </div>
@@ -111,29 +110,70 @@ Published on Thursday, March 7, 2019<br>    </div>
                                 <div id="content" class="col-md-12">
                                         
 
-<p>This is my first post on my personal site.</p>
-<p>I wanted to create a personal website to start documenting some of things that I mess about on and have interest in. Largely this will be development based I'm guessing but who knows. I went for a static site approach since I have no foreseeable need for dynamic content or proper backend. I'm initally hosting this on Azure Storage which has fairly recently started making this available.</p>
-<p>So to start with I thought I'd create a simple post on how I'm going about creating my statically hosted website in Azure.</p>
-<p>Being someone with more experience as a back-end developer than front-end I decided to use a static site templating tool. I chose Wyam over some of the more well known ones purely as it looked easy to use and completely extensible, which is even better since it's written in dotnet. The approach Wyam takes is to give some /input files, and pipelines to create an /output directory where all the input files are translated into proper html with 'themes' (which can be customised) are applied. The input files for blog posts etc can be written in markdown then translated. Everything is overrideable and it includes support for using Razor views as well.</p>
-<p>I have been using VSCode for my IDE, which has provided a fantastic experience with the ever growing list of handy extensions. ... to do provide a list..</p>
-<h2 id="prerequisites">Prerequisites</h2>
-<ol>
-<li>dotnet core and cli tools installed.</li>
-<li>vscode installed</li>
-</ol>
-<h3 id="steps-to-install-wyam">Steps to install Wyam</h3>
+<h2 id="appveyor-and-github-pages">AppVeyor and GitHub Pages</h2>
+<p>With my blog site created and viewable using the preview, next up was where to host it. Having created a GitHub repo for the project I decided to use GitHub Pages as the host primarily as it's free.</p>
+<p>In order for me to make use of the site I really needed the process for adding content as pain free as possible so I set up a CD pipeline using AppVeyor.</p>
+<p>There were a few things to set up first. The appveyor build task will use your input files in master and then output your site pages to another branch in your repo which will then be hosted. I created an orpaned branch for this on my main repo:</p>
+<p><code>git checkout --orphan gh-pages</code></p>
+<p>Then remove any content:</p>
+<p><code>git rm rf .</code></p>
+<p>before adding one 'dummy' file and pushing to the repo.</p>
+<p>For the AppVeyor part create an account AppVeyor, linked it to the required GitHub repo by 'adding project', and granting to required access.</p>
+<p>Then grab your personal access token from GitHub by</p>
 <ul>
-<li>Start a terminal session in VsCode (assuming you have dotnet core cli installed)
-<code>dotnet tool install -g Wyam.Tool</code></li>
+<li>Go to context menu top right of page</li>
+<li>Settings</li>
+<li>Developer Settings</li>
+<li>Personal Access Tokens</li>
+<li>Choose existing or generate new</li>
+<li>Copy to clipboard</li>
 </ul>
-<h3 id="steps-to-create-the-hello-world-vanilla-blog-site">Steps to create the 'hello world' vanilla blog site</h3>
-<p><code>wyam new --recipe Blog</code></p>
-<p>This will create the new site with the blog recipe, then you can edit the input files as required before building the blog with a certain theme:</p>
-<p><code>wyam --recipe Blog --theme CleanBlog</code></p>
-<p>That's it. Done. You should have a nice output folder with translated files. I chose to copy the theme files and Razor views from the wyam github repo so I could easily override behaviour and styles as required, and also because I find it easier to understand if I can quickly check the logic.</p>
-<p>Any pipeline customizations can be done in the 'config.wyam' folder... I'll add examples as I need to start using them.</p>
-<h2 id="azure-static-website">Azure Static Website</h2>
-<p>Initially I am hosting this on Azure Storage using Static Website, however I'm already tempted by the ease of using GitHub Pages, so this may well change. Setting up Azure Storage was however pretty straight forward and the extension 'Azure Account' and 'Azure Storage' made deploying the site straightfoward.</p>
+<p>Once you have the personal access token it can be encrypted using the encryption tool in AppVeyor before being added to the build script. Next time you push a commit to github your build will be kicked off.</p>
+<p>Not too tricky to setup and once it's working it saves so much time. Automation is good.</p>
+<pre><code>branches:
+  only:
+    - master
+    
+environment:
+  access_token:
+    # EDIT the encrypted version of your GitHub access token
+    secure: 
+
+install:
+  - git submodule update --init --recursive
+  - mkdir ..\Wyam
+  - mkdir ..\output
+  # Fetch the latest version of Wyam 
+  - &quot;curl -s https://raw.githubusercontent.com/Wyamio/Wyam/master/RELEASE -o ..\\Wyam\\wyamversion.txt&quot;
+  - set /P WYAMVERSION=&lt; ..\Wyam\wyamversion.txt
+  - echo %WYAMVERSION%
+  # Get and unzip the latest version of Wyam
+  - ps: Start-FileDownload &quot;https://github.com/Wyamio/Wyam/releases/download/$env:WYAMVERSION/Wyam-$env:WYAMVERSION.zip&quot; -FileName &quot;..\Wyam\Wyam.zip&quot;
+  - 7z x ..\Wyam\Wyam.zip -o..\Wyam -r
+
+build_script:
+  - dotnet ..\Wyam\Wyam.dll --output ..\output
+
+on_success:
+  # Switch branches to gh-pages, clean the folder, copy everything in from the Wyam output, and commit/push
+  # See http://www.appveyor.com/docs/how-to/git-push for more info
+  - git config --global credential.helper store
+  # EDIT your Git email and name
+  - git config --global user.email &quot;your email&quot; $env:op_build_user_email
+  - git config --global user.name &quot;your user name&quot; $env:op_build_user
+  - ps: Add-Content &quot;$env:USERPROFILE\.git-credentials&quot; &quot;https://$($env:access_token):x-oauth-basic&#64;github.com`n&quot;
+  - git checkout gh-pages -f
+  - git rm -rf .
+  - xcopy ..\output . /E
+  # EDIT your domain name or remove if not using a custom domain
+  # - echo wyam.io &gt; CNAME
+  # EDIT the origin of your repository - have to reset it here because AppVeyor pulls from SSH, but GitHub won't accept SSH pushes
+  - git remote set-url origin https://github.com/yourusername/yourreponame.git
+  - git add -A
+  - git commit -a -m &quot;Commit from AppVeyor&quot;
+  - git push
+
+</code></pre>
 
 
 

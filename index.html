@@ -105,24 +105,90 @@
 <div class="row">
     <div class="col-sm-8 right-border">
                 <div class="post-preview">
-                    <a href="/posts/2019/05/migrating-to-github-pages">
-                        <h2 class="post-title">Website CI/CD pipeline</h2>
+                    <a href="/posts/2019/05/github-pages-with-appveyor">
+                        <h2 class="post-title">Website CD pipeline</h2>
                     </a>
                     <p class="post-meta">Posted on Tuesday, May 7, 2019</p>
 <h2 id="appveyor-and-github-pages">AppVeyor and GitHub Pages</h2>
-<p>I decided against an Azure static site with a Azure devops pipeline, and settled on Github pages and AppVeyor, largely because I'd not done anything with GitHub Pages or AppVeyor before. I also sensed that setting up the custom domain was going to be much more straightfoward, Azure expects to use a CDN for the custom domain, and whilst very do-able was not as straightforward</p>
+<p>With my blog site created and viewable using the preview, next up was where to host it. Having created a GitHub repo for the project I decided to use GitHub Pages as the host primarily as it's free.</p>
+<p>In order for me to make use of the site I really needed the process for adding content as pain free as possible so I set up a CD pipeline using AppVeyor.</p>
+<p>There were a few things to set up first. The appveyor build task will use your input files in master and then output your site pages to another branch in your repo which will then be hosted. I created an orpaned branch for this on my main repo:</p>
+<p><code>git checkout --orphan gh-pages</code></p>
+<p>Then remove any content:</p>
+<p><code>git rm rf .</code></p>
+<p>before adding one 'dummy' file and pushing to the repo.</p>
+<p>For the AppVeyor part create an account AppVeyor, linked it to the required GitHub repo by 'adding project', and granting to required access.</p>
+<p>Then grab your personal access token from GitHub by</p>
+<ul>
+<li>Go to context menu top right of page</li>
+<li>Settings</li>
+<li>Developer Settings</li>
+<li>Personal Access Tokens</li>
+<li>Choose existing or generate new</li>
+<li>Copy to clipboard</li>
+</ul>
+<p>Once you have the personal access token it can be encrypted using the encryption tool in AppVeyor before being added to the build script. Next time you push a commit to github your build will be kicked off.</p>
+<p>Not too tricky to setup and once it's working it saves so much time. Automation is good.</p>
+<pre><code>branches:
+  only:
+    - master
+    
+environment:
+  access_token:
+    # EDIT the encrypted version of your GitHub access token
+    secure: 
+
+install:
+  - git submodule update --init --recursive
+  - mkdir ..\Wyam
+  - mkdir ..\output
+  # Fetch the latest version of Wyam 
+  - &quot;curl -s https://raw.githubusercontent.com/Wyamio/Wyam/master/RELEASE -o ..\\Wyam\\wyamversion.txt&quot;
+  - set /P WYAMVERSION=&lt; ..\Wyam\wyamversion.txt
+  - echo %WYAMVERSION%
+  # Get and unzip the latest version of Wyam
+  - ps: Start-FileDownload &quot;https://github.com/Wyamio/Wyam/releases/download/$env:WYAMVERSION/Wyam-$env:WYAMVERSION.zip&quot; -FileName &quot;..\Wyam\Wyam.zip&quot;
+  - 7z x ..\Wyam\Wyam.zip -o..\Wyam -r
+
+build_script:
+  - dotnet ..\Wyam\Wyam.dll --output ..\output
+
+on_success:
+  # Switch branches to gh-pages, clean the folder, copy everything in from the Wyam output, and commit/push
+  # See http://www.appveyor.com/docs/how-to/git-push for more info
+  - git config --global credential.helper store
+  # EDIT your Git email and name
+  - git config --global user.email &quot;your email&quot; $env:op_build_user_email
+  - git config --global user.name &quot;your user name&quot; $env:op_build_user
+  - ps: Add-Content &quot;$env:USERPROFILE\.git-credentials&quot; &quot;https://$($env:access_token):x-oauth-basic&#64;github.com`n&quot;
+  - git checkout gh-pages -f
+  - git rm -rf .
+  - xcopy ..\output . /E
+  # EDIT your domain name or remove if not using a custom domain
+  # - echo wyam.io &gt; CNAME
+  # EDIT the origin of your repository - have to reset it here because AppVeyor pulls from SSH, but GitHub won't accept SSH pushes
+  - git remote set-url origin https://github.com/yourusername/yourreponame.git
+  - git add -A
+  - git commit -a -m &quot;Commit from AppVeyor&quot;
+  - git push
+
+</code></pre>
                 </div>       
                     <hr /> 
                 <div class="post-preview">
-                    <a href="/posts/2019/03/getting-started">
+                    <a href="/posts/2019/03/wyam-site-creation">
                         <h2 class="post-title">Wyam website creation</h2>
                     </a>
                     <p class="post-meta">Posted on Thursday, March 7, 2019</p>
 <p>This is my first post on my personal site.</p>
 <p>I wanted to create a personal website to start documenting some of things that I mess about on and have interest in. Largely this will be development based I'm guessing but who knows. I went for a static site approach since I have no foreseeable need for dynamic content or proper backend. I'm initally hosting this on Azure Storage which has fairly recently started making this available.</p>
-<p>So to start with I thought I'd create a simple post on how I'm going about creating my statically hosted website in Azure.</p>
-<p>Being someone with more experience as a back-end developer than front-end I decided to use a static site templating tool. I chose Wyam over some of the more well known ones purely as it looked easy to use and completely extensible, which is even better since it's written in dotnet. The approach Wyam takes is to give some /input files, and pipelines to create an /output directory where all the input files are translated into proper html with 'themes' (which can be customised) are applied. The input files for blog posts etc can be written in markdown then translated. Everything is overrideable and it includes support for using Razor views as well.</p>
-<p>I have been using VSCode for my IDE, which has provided a fantastic experience with the ever growing list of handy extensions. ... to do provide a list..</p>
+<p>So to start with I thought I'd create a simple post on how I'm going about creating my static website.</p>
+<p>Being someone with more experience as a back-end developer than front-end I decided to use a static site creation tool. I chose Wyam [WYAM]: <a href="https://wyam.io/">https://wyam.io/</a> over some of the more well known javascript based ones purely as it looked easy to use and extensible, with the added bonus it's written in dotnet. Wyam is</p>
+<blockquote class="blockquote">
+<p>A HIGHLY MODULAR AND EXTREMELY CONFIGURABLE STATIC CONTENT GENERATOR AND TOOLKIT</p>
+</blockquote>
+<p>After you have scaffolded a template project from one of the 'recipes', you can build your output html content with one of the themes, or create your own theme. You can also customise. Things such as posts can be written in markdown then translated into HTML when you build. Everything seems overrideable and customisable through concepts such as modules and pipelines. It includes support for using Razor views as well. Initially I have pulled down files the 'CleanBlog' theme.</p>
+<p>I have been using VSCode for my IDE, which I've grown to love, and is always getting better with the ever growing list of handy extensions.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <ol>
 <li>dotnet core and cli tools installed.</li>
@@ -137,18 +203,12 @@
 <p><code>wyam new --recipe Blog</code></p>
 <p>This will create the new site with the blog recipe, then you can edit the input files as required before building the blog with a certain theme:</p>
 <p><code>wyam --recipe Blog --theme CleanBlog</code></p>
-<p>That's it. Done. You should have a nice output folder with translated files. I chose to copy the theme files and Razor views from the wyam github repo so I could easily override behaviour and styles as required, and also because I find it easier to understand if I can quickly check the logic.</p>
-<p>Any pipeline customizations can be done in the 'config.wyam' folder... I'll add examples as I need to start using them.</p>
-<h2 id="azure-static-website">Azure Static Website</h2>
-<p>Initially I am hosting this on Azure Storage using Static Website, however I'm already tempted by the ease of using GitHub Pages, so this may well change. Setting up Azure Storage was however pretty straight forward and the extension 'Azure Account' and 'Azure Storage' made deploying the site straightfoward.</p>
-                </div>       
-                    <hr /> 
-                <div class="post-preview">
-                    <a href="/posts/2016/01/first-post">
-                        <h2 class="post-title">First Post</h2>
-                    </a>
-                    <p class="post-meta">Posted on Friday, January 1, 2016</p>
-<p>This is my first post!</p>
+<p>That's it. Done. You should have a output folder complete with translated files. You can now preview the site using the Wyam preview server:</p>
+<p><code>wyam preview</code></p>
+<p>and navigate to http://localhost:5080</p>
+<p>I chose to copy the theme files and Razor views from the wyam github repo so I could easily override behaviour and styles as required, and also because I find I learn more quickly if I can see how something is put together.</p>
+<p>Any pipeline customizations can be done in the 'config.wyam' folder... I'll add examples as I need to start using them. As is stands I like how the site looks and how easy it was to put together.</p>
+<h2 id="section"></h2>
                 </div>       
         <ul class="pager">
             <li class="previous">                
@@ -162,11 +222,11 @@
 
             <h5>Tags</h5>
             <div>
-                    <a role="button" href="/tags/Introduction" class="btn btn-default btn-sm"> Introduction (2)</a>
-                    <a role="button" href="/tags/GitHub-Pages" class="btn btn-default btn-sm"> GitHub Pages (1)</a>
+                    <a role="button" href="/tags/Wyam" class="btn btn-default btn-sm"> Wyam (1)</a>
                     <a role="button" href="/tags/AppVeyor" class="btn btn-default btn-sm"> AppVeyor (1)</a>
                     <a role="button" href="/tags/VSCode" class="btn btn-default btn-sm"> VSCode (1)</a>
-                    <a role="button" href="/tags/Wyam" class="btn btn-default btn-sm"> Wyam (1)</a>
+                    <a role="button" href="/tags/GitHub-Pages" class="btn btn-default btn-sm"> GitHub Pages (1)</a>
+                    <a role="button" href="/tags/Introduction" class="btn btn-default btn-sm"> Introduction (1)</a>
             </div>
             <ul class="pager">
                 <li class="next">

@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
 
-        <title>My Blog - First Post</title>
+        <title>My Blog - Wyam website creation</title>
         <meta name="description" content="Welcome!" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">        
 
@@ -28,9 +28,9 @@
         <meta name="msapplication-tooltip" content="My Blog" />
         <meta name="msapplication-starturl" content="/" />
 
-        <meta property="og:title" content="My Blog - First Post" />
+        <meta property="og:title" content="My Blog - Wyam website creation" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://howesonp.github.io/posts/2016/01/first-post" />
+        <meta property="og:url" content="https://howesonp.github.io/posts/2019/03/wyam-site-creation" />
         <!-- TODO: More social graph meta tags -->
 
         <script src="/assets/js/jquery.min.js"></script>
@@ -91,11 +91,13 @@
 
     
 <div class="post-heading">
-    <h1>First Post</h1>
+    <h1>Wyam website creation</h1>
     <div class="meta">        
-Published on Friday, January 1, 2016<br>    </div>
+Published on Thursday, March 7, 2019<br>    </div>
         <div class="tags">
                     <a role="button" href="/tags/Introduction" class="btn btn-default btn-xs">Introduction</a>
+                    <a role="button" href="/tags/VSCode" class="btn btn-default btn-xs">VSCode</a>
+                    <a role="button" href="/tags/Wyam" class="btn btn-default btn-xs">Wyam</a>
         </div>     
 </div>
                                         </div>
@@ -109,7 +111,35 @@ Published on Friday, January 1, 2016<br>    </div>
                                 <div id="content" class="col-md-12">
                                         
 
-<p>This is my first post!</p>
+<p>This is my first post on my personal site.</p>
+<p>I wanted to create a personal website to start documenting some of things that I mess about on and have interest in. Largely this will be development based I'm guessing but who knows. I went for a static site approach since I have no foreseeable need for dynamic content or proper backend. I'm initally hosting this on Azure Storage which has fairly recently started making this available.</p>
+<p>So to start with I thought I'd create a simple post on how I'm going about creating my static website.</p>
+<p>Being someone with more experience as a back-end developer than front-end I decided to use a static site creation tool. I chose Wyam [WYAM]: <a href="https://wyam.io/">https://wyam.io/</a> over some of the more well known javascript based ones purely as it looked easy to use and extensible, with the added bonus it's written in dotnet. Wyam is</p>
+<blockquote class="blockquote">
+<p>A HIGHLY MODULAR AND EXTREMELY CONFIGURABLE STATIC CONTENT GENERATOR AND TOOLKIT</p>
+</blockquote>
+<p>After you have scaffolded a template project from one of the 'recipes', you can build your output html content with one of the themes, or create your own theme. You can also customise. Things such as posts can be written in markdown then translated into HTML when you build. Everything seems overrideable and customisable through concepts such as modules and pipelines. It includes support for using Razor views as well. Initially I have pulled down files the 'CleanBlog' theme.</p>
+<p>I have been using VSCode for my IDE, which I've grown to love, and is always getting better with the ever growing list of handy extensions.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ol>
+<li>dotnet core and cli tools installed.</li>
+<li>vscode installed</li>
+</ol>
+<h3 id="steps-to-install-wyam">Steps to install Wyam</h3>
+<ul>
+<li>Start a terminal session in VsCode (assuming you have dotnet core cli installed)
+<code>dotnet tool install -g Wyam.Tool</code></li>
+</ul>
+<h3 id="steps-to-create-the-hello-world-vanilla-blog-site">Steps to create the 'hello world' vanilla blog site</h3>
+<p><code>wyam new --recipe Blog</code></p>
+<p>This will create the new site with the blog recipe, then you can edit the input files as required before building the blog with a certain theme:</p>
+<p><code>wyam --recipe Blog --theme CleanBlog</code></p>
+<p>That's it. Done. You should have a output folder complete with translated files. You can now preview the site using the Wyam preview server:</p>
+<p><code>wyam preview</code></p>
+<p>and navigate to http://localhost:5080</p>
+<p>I chose to copy the theme files and Razor views from the wyam github repo so I could easily override behaviour and styles as required, and also because I find I learn more quickly if I can see how something is put together.</p>
+<p>Any pipeline customizations can be done in the 'config.wyam' folder... I'll add examples as I need to start using them. As is stands I like how the site looks and how easy it was to put together.</p>
+<h2 id="section"></h2>
 
 
 
