@@ -6,10 +6,15 @@
 Settings[Keys.Host] = "howesonp.github.io";
 Settings[Keys.LinksUseHttps] = true;
 Settings[Keys.LinkHideExtensions] = true;
-Settings[BlogKeys.Title] = "Pat Howeson";
+
 Settings[BlogKeys.CaseInsensitiveTags] = true;
+Settings[BlogKeys.Description] = "General ramblings";
+Settings[BlogKeys.IgnoreFolders] = "private";
+Settings[BlogKeys.Image] = "/assets/images/front-image-small.jpg";
 Settings[BlogKeys.IncludeDateInPostPath] = true;
 Settings[BlogKeys.IndexFullPosts] = false;
 Settings[BlogKeys.IncludeDateInPostPath] = true;
-Settings[BlogKeys.Intro] = "General ramblings, trying to make sense";
+Settings[BlogKeys.Intro] = "On software development, and maybe more";
+Settings[BlogKeys.Title] = "Pat Howeson";
+
 // Add any pipeline customizations here

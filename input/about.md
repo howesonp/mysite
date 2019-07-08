@@ -1,9 +1,9 @@
 Title: About Me
+Lead: Software Engineer
+Image: ./assets/images/field-cut.jpg
 ---
 
-# Pat Howeson
-
-## Cloud Software Engineer
+# Cloud Software Engineer
 
 ## ![alt text](./assets/images/me-medium.jpg "Pat Howeson")
 

@@ -93,8 +93,7 @@
                         string backgroundImage = null;
                         if(Model.String(BlogKeys.Image) != null)
                         {
-                                backgroundImage = $"background-image: url(\"{Model.String(BlogKeys.Image)}\")";
-                               // backgroundImage = $"background-image: url(./assets/images/me.medium.jpg)";
+                               backgroundImage = $"background-image: url(\"{Model.String(BlogKeys.Image)}\")";       
                         }
                 }
                 <header class="intro-header" id="intro-header" style="@backgroundImage">

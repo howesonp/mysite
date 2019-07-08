@@ -5,8 +5,8 @@ Tags:
 - Wyam
 - VSCode
 ---
-This is my first post on my personal site.
 
+This is my first post on my personal site.
 
 I wanted to create a personal website to start documenting some of things that I mess about on and have interest in. Largely this will be development based I'm guessing but who knows. I went for a static site approach since I have no foreseeable need for dynamic content or proper backend. I'm initally hosting this on Azure Storage which has fairly recently started making this available.
 
