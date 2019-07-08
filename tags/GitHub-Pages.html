@@ -84,7 +84,7 @@
                 </nav>
                 
                 <!-- Page Header -->
-                <header class="intro-header" id="intro-header" style="background-image: url(&quot;/assets/images/front-image-small.jpg&quot;)">
+                <header class="intro-header" id="intro-header">
                         <div class="container">
                                 <div class="row">
                                         <div class="col-md-12">
@@ -130,11 +130,11 @@
 		
         <div class="col-sm-4 col-sm-height">
                 <a role="button" href="/tags/GitHub-Pages" class="btn btn-primary btn-xs">GitHub Pages (2)</a>
-                <a role="button" href="/tags/Domain" class="btn btn-default btn-xs">Domain (1)</a>
-                <a role="button" href="/tags/AppVeyor" class="btn btn-default btn-xs">AppVeyor (1)</a>
                 <a role="button" href="/tags/Introduction" class="btn btn-default btn-xs">Introduction (1)</a>
                 <a role="button" href="/tags/Wyam" class="btn btn-default btn-xs">Wyam (1)</a>
                 <a role="button" href="/tags/VSCode" class="btn btn-default btn-xs">VSCode (1)</a>
+                <a role="button" href="/tags/Domain" class="btn btn-default btn-xs">Domain (1)</a>
+                <a role="button" href="/tags/AppVeyor" class="btn btn-default btn-xs">AppVeyor (1)</a>
         </div>
     </div>
 </div>
@@ -167,6 +167,20 @@
                 
                 <script>hljs.initHighlightingOnLoad();</script>
 
+                        <script type="text/javascript">                
+                                // Header background                        
+                                var colors = Please.make_color({
+                                        colors_returned: 3,
+                                        saturation: .6
+                                });
+                                var t = new Trianglify({
+                                        x_gradient: colors,
+                                        y_gradient: ["#FFFFFF"]
+                                });
+                                var header = document.getElementById("intro-header");
+                                var pattern = t.generate(header.clientWidth, header.clientHeight);
+                                header.setAttribute('style', 'background-image: ' + pattern.dataUrl);                        
+                        </script>
 
                 <script>
                         BackgroundCheck.init({

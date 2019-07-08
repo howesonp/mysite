@@ -5,13 +5,12 @@
 		<link>https://howesonp.github.io/</link>
 		<description>General ramblings</description>
 		<copyright>2019</copyright>
-		<pubDate>Mon, 08 Jul 2019 12:42:47 GMT</pubDate>
-		<lastBuildDate>Mon, 08 Jul 2019 12:42:47 GMT</lastBuildDate>
+		<pubDate>Mon, 08 Jul 2019 14:00:28 GMT</pubDate>
+		<lastBuildDate>Mon, 08 Jul 2019 14:00:28 GMT</lastBuildDate>
 		<item>
 			<title>CName</title>
 			<link>https://howesonp.github.io/posts/2019/07/setting-up-cname</link>
 			<description>&lt;p&gt;Adding custom domain to GitHub Pages&lt;/p&gt;</description>
-			<enclosure url="https://howesonp.github.io/assets/images/front-image-small.jpg" length="0" type="image" />
 			<guid>https://howesonp.github.io/posts/2019/07/setting-up-cname</guid>
 			<pubDate>Sun, 07 Jul 2019 00:00:00 GMT</pubDate>
 			<content:encoded>&lt;p&gt;Adding custom domain to GitHub Pages&lt;/p&gt;
@@ -21,7 +20,6 @@
 			<title>Website CD pipeline</title>
 			<link>https://howesonp.github.io/posts/2019/05/github-pages-with-appveyor</link>
 			<description>&lt;p&gt;With my blog site created and viewable using the preview, next up was where to host it. Having created a GitHub repo for the project I decided to use GitHub Pages as the host primarily as it's free.&lt;/p&gt;</description>
-			<enclosure url="https://howesonp.github.io/assets/images/front-image-small.jpg" length="0" type="image" />
 			<guid>https://howesonp.github.io/posts/2019/05/github-pages-with-appveyor</guid>
 			<pubDate>Tue, 07 May 2019 00:00:00 GMT</pubDate>
 			<content:encoded>&lt;h4 id="appveyor-and-github-pages"&gt;AppVeyor and GitHub Pages&lt;/h4&gt;
@@ -94,7 +92,6 @@ on_success:
 			<title>Wyam website creation</title>
 			<link>https://howesonp.github.io/posts/2019/03/wyam-site-creation</link>
 			<description>&lt;p&gt;This is my first post on my personal site.&lt;/p&gt;</description>
-			<enclosure url="https://howesonp.github.io/assets/images/front-image-small.jpg" length="0" type="image" />
 			<guid>https://howesonp.github.io/posts/2019/03/wyam-site-creation</guid>
 			<pubDate>Thu, 07 Mar 2019 00:00:00 GMT</pubDate>
 			<content:encoded>&lt;p&gt;This is my first post on my personal site.&lt;/p&gt;

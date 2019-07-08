@@ -4,14 +4,12 @@
 	<title>Pat Howeson</title>
 	<link rel="self" href="https://howesonp.github.io/" />
 	<rights>2019</rights>
-	<updated>2019-07-08T12:42:47Z</updated>
-	<logo>https://howesonp.github.io/assets/images/front-image-small.jpg</logo>
+	<updated>2019-07-08T14:00:28Z</updated>
 	<subtitle>General ramblings</subtitle>
 	<entry>
 		<id>https://howesonp.github.io/posts/2019/07/setting-up-cname</id>
 		<title>CName</title>
 		<link href="https://howesonp.github.io/posts/2019/07/setting-up-cname" />
-		<link rel="enclosure" type="image" href="https://howesonp.github.io/assets/images/front-image-small.jpg" />
 		<updated>2019-07-07T00:00:00Z</updated>
 		<content>&lt;p&gt;Adding custom domain to GitHub Pages&lt;/p&gt;
 </content>
@@ -21,7 +19,6 @@
 		<id>https://howesonp.github.io/posts/2019/05/github-pages-with-appveyor</id>
 		<title>Website CD pipeline</title>
 		<link href="https://howesonp.github.io/posts/2019/05/github-pages-with-appveyor" />
-		<link rel="enclosure" type="image" href="https://howesonp.github.io/assets/images/front-image-small.jpg" />
 		<updated>2019-05-07T00:00:00Z</updated>
 		<content>&lt;h4 id="appveyor-and-github-pages"&gt;AppVeyor and GitHub Pages&lt;/h4&gt;
 &lt;p&gt;With my blog site created and viewable using the preview, next up was where to host it. Having created a GitHub repo for the project I decided to use GitHub Pages as the host primarily as it's free.&lt;/p&gt;
@@ -94,7 +91,6 @@ on_success:
 		<id>https://howesonp.github.io/posts/2019/03/wyam-site-creation</id>
 		<title>Wyam website creation</title>
 		<link href="https://howesonp.github.io/posts/2019/03/wyam-site-creation" />
-		<link rel="enclosure" type="image" href="https://howesonp.github.io/assets/images/front-image-small.jpg" />
 		<updated>2019-03-07T00:00:00Z</updated>
 		<content>&lt;p&gt;This is my first post on my personal site.&lt;/p&gt;
 &lt;p&gt;I wanted to create a personal website to start documenting some of things that I mess about on and have interest in. Largely this will be development based I'm guessing but who knows. I went for a static site approach since I have no foreseeable need for dynamic content or proper backend. I'm initally hosting this on Azure Storage which has fairly recently started making this available.&lt;/p&gt;
