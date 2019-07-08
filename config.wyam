@@ -10,7 +10,6 @@ Settings[Keys.LinkHideExtensions] = true;
 Settings[BlogKeys.CaseInsensitiveTags] = true;
 Settings[BlogKeys.Description] = "General ramblings";
 Settings[BlogKeys.IgnoreFolders] = "private";
-Settings[BlogKeys.Image] = "/assets/images/front-image-small.jpg";
 Settings[BlogKeys.IncludeDateInPostPath] = true;
 Settings[BlogKeys.IndexFullPosts] = false;
 Settings[BlogKeys.IncludeDateInPostPath] = true;
